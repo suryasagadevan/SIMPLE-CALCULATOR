@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>simple calculator</title>
+	<style type="text/css">
+		table{
+			background-color: greenyellow;
+			border-radius: 20px;
+			padding: 30px;
+			margin-left: 20% ;
+
+			box-align:center ;
+			outline-color: black;
+			outline-width: 30%;
+		}
+		table:hover{
+			background-color: darkorange;
+
+		}
+		input:hover{
+			background-color: blueviolet;
+
+		}
+		input{
+			width: 208px;
+			background-color:yellow;
+			border-radius: 10px;
+			height: 40px;
+		}
+		button:hover{
+			color: red;
+			width: 43px;
+			margin:ghostwhite;
+		}
+		button{
+			border-radius: 10px;
+			cursor: pointer;
+			color: black;
+			background-color: green;
+			padding: 10px;
+			width: 40px;
+			transition: 2px;
+		}
+		td{
+			float: left;
+			left: 0;
+			padding: 2px;
+			width: 40px;
+			color: red;
+
+		}
+	</style>
+</head>
+<body>
+	<h1>calculator</h1>
+	<table style="float: left;">
+		<tr>
+			<td> <input  id="display"></td>
+		</tr>
+		<tr>
+			<td><button onclick="send(1)">1</button></td>
+			<td><button onclick="send(2)">2</button></td>
+			<td><button onclick="send(3)">3</button></td>
+			<td><button onclick="send(4)">4</button></td>
+			<td><button onclick="send(5)">5</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="send(6)">6</button></td>
+			<td><button onclick="send(7)">7</button></td>
+			<td><button onclick="send(8)">8</button></td>
+			<td><button onclick="send(9)">9</button></td>
+			<td><button onclick="send(0)">0</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="send('+')">+</button></td>
+			<td><button onclick="send('-')">-</button></td>
+			<td><button onclick="send('/')">/</button></td>
+			<td><button onclick="send('*')">*</button></td>
+			<td><button onclick="send('=')">=</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="send('log')">log</button></td>
+			<td><button onclick="send('sq')">sq</button></td>
+			<td><button onclick="send('1/x')">1/x</button></td>
+			<td><button onclick="send('.')">.</button></td>
+			<td><button onclick="send('AC')">AC</button></td>
+		</tr>
+		
+	</table>
+	<script >
+		function  send(i){
+			x=document.getElementById("display");
+			switch(i){
+			   case 1 :
+				  x.value+=1;
+				break;
+			case 2 :
+				  x.value+=2;
+				break;
+			case 3 :
+				  x.value+=3;
+				break;
+
+			case 4 :
+				  x.value+=4;
+				break;	
+			case 5 :
+				  x.value+=5;
+				break;
+			case 6 :
+				  x.value+=6;
+				break;
+			case 7 :
+				  x.value+=7;
+				break;
+
+			case 8 :
+				  x.value+=8;
+				break;	
+			case 9 :
+				  x.value+=9;
+				break;	
+            case 0 :
+				  x.value+=0;
+				break;
+
+			case '+' :
+				  x.value+='+';
+				break;
+			case '-' :
+				  x.value+='-';
+				break;
+			case '/' :
+				  x.value+='/';
+				break;
+			case '*' :
+				  x.value+='*';
+				break;
+			case '=' :
+				result=eval(x.value);
+				  x.value=result;
+				break;
+			case 'AC' :
+				  x.value="";
+				break;
+			case 'log':
+				result=eval(Math.log10(x.value));
+				  x.value=result;
+				break;
+			case 'sq':
+				result=eval(Math.sqrt(x.value));
+				  x.value=result;
+				break;
+			case '.' :
+				  x.value+='.';
+				break;
+			case '1/x' :
+				  result=eval(1/x.value);
+				  x.value=result;
+				break;
+			}
+
+		}
+	</script>
+
+</body>
+</html>
